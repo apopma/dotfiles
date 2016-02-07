@@ -7,7 +7,7 @@ export RUBY_GC_MALLOC_LIMIT=50000000
 # git
 alias coma="git checkout master"
 alias ga="git add"
-alias gbl="git blame"
+alias gib="git blame"
 alias gcm="git commit -m"
 alias gd="git diff"
 alias gdc="git diff --cached"
