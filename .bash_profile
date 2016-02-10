@@ -14,6 +14,7 @@ alias gdc="git diff --cached"
 alias gish="git stash"
 alias gp="git pull"
 alias gs="git status"
+alias todos="git grep -n --ignore-case todo"
 
 # bundler
 alias be="bundle exec"
@@ -34,9 +35,10 @@ function git-files() {
 # docker
 # eval "$(docker-machine env default)"
 
-# rbenv
+# version managers
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
 
 # derp
 alias xyzzy="echo 'Nothing happens.'"
