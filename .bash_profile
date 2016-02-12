@@ -15,6 +15,7 @@ alias gish="git stash"
 alias gp="git pull"
 alias gs="git status"
 alias todos="git grep -n --ignore-case todo"
+alias pullem="for item in $(ls); do (cd $item && git checkout master && git pull && cd ..); done;"
 
 # bundler
 alias be="bundle exec"
