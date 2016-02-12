@@ -15,7 +15,6 @@ alias gish="git stash"
 alias gp="git pull"
 alias gs="git status"
 alias todos="git grep -n --ignore-case todo"
-alias pullem="for item in $(ls); do (cd $item && git checkout master && git pull && cd ..); done;"
 
 # bundler
 alias be="bundle exec"
@@ -31,6 +30,17 @@ alias gosh="git rev-parse head | xargs echo -n | pbcopy" # copy current HEAD sha
 
 function git-files() {
   git ls-tree --full-tree -r --name-only HEAD
+}
+
+function pullem() {
+  for repo in $(ls); do
+    cd $repo && \
+    git stash && \
+    git checkout master && \
+    git pull && \
+    git stash pop;
+    cd ..;
+  done
 }
 
 # docker
