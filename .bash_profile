@@ -33,18 +33,25 @@ function git-files() {
 }
 
 function pullem() {
-  for repo in $(ls); do
-    cd $repo && \
-    git stash && \
-    git checkout master && \
-    git pull && \
-    git stash pop;
-    cd ..;
+  REPOS_DIR=$(pwd)
+  find . -name .git -type d -prune | while read repo; do
+    cd ${repo}/..
+    echo "Pulling $(pwd)..."
+    git checkout master
+    git pull
+    echo
+    cd $REPOS_DIR
   done
+
+  cd $REPOS_DIR; unset REPOS_DIR
 }
 
 # docker
 # eval "$(docker-machine env default)"
+
+# vbox
+alias vbm="vboxmanage"
+alias adb="~/Library/Android/sdk/platform-tools/adb"
 
 # version managers
 export PATH="$HOME/.rbenv/bin:$PATH"
