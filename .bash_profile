@@ -6,6 +6,7 @@ export RUBY_GC_MALLOC_LIMIT=50000000
 
 # git
 alias coma="git checkout master"
+alias fuckit="git reset --hard"
 alias ga="git add"
 alias gib="git blame"
 alias gcm="git commit -m"
