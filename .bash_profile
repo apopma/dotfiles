@@ -16,6 +16,8 @@ alias gish="git stash"
 alias gp="git pull"
 alias gs="git status"
 alias todos="git grep -n --ignore-case todo"
+alias repomasters="git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr"
+
 
 # bundler
 alias be="bundle exec"
