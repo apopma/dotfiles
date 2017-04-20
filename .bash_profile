@@ -8,6 +8,7 @@ export RUBY_GC_MALLOC_LIMIT=50000000
 alias coma="git checkout master"
 alias fuckit="git reset --hard"
 alias ga="git add"
+alias gbr="git branch"
 alias gib="git blame"
 alias gcm="git commit -m"
 alias gd="git diff"
@@ -17,7 +18,6 @@ alias gp="git pull"
 alias gs="git status"
 alias todos="git grep -n --ignore-case todo"
 alias repomasters="git ls-files | xargs -n1 git blame --line-porcelain | sed -n 's/^author //p' | sort -f | uniq -ic | sort -nr"
-
 
 # bundler
 alias be="bundle exec"
