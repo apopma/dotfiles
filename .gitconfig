@@ -4,6 +4,7 @@ name = apopma
 [push]
 	default = simple
 [alias]
+	st = status
 	co = checkout
 	branch-name = rev-parse --abbrev-ref HEAD
 	pub = "!git push -u origin $(git branch-name)"
