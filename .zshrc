@@ -100,6 +100,26 @@ source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------
 
+# .env loading in the shell
+# Inspired by http://stackoverflow.com/a/21831665/589391 and
+# https://github.com/gchaincl/dotenv.sh, then re-inspired
+# by the "set -a" trick from timwis
+
+dotenv() {
+  set -a
+  [ -f .env ] && . .env
+  set +a
+}
+
+# Run dotenv on login
+dotenv
+
+# Run dotenv on every new directory
+cd() {
+  builtin cd $@
+  dotenv
+}
+
 # git
 alias coma="git checkout master"
 alias fuckit="git reset --hard"
@@ -156,6 +176,9 @@ alias adb="~/Library/Android/sdk/platform-tools/adb"
 
 # k8s
 alias kc="kubectl"
+
+# terraform
+alias tf="terraform"
 
 # derp
 alias xyzzy="echo 'Nothing happens.'"
