@@ -1,5 +1,6 @@
 [user]
 	name = apopma
+	email = adapopma@navapbc.com
 [push]
 	default = simple
 [alias]
@@ -10,3 +11,4 @@
 	branch-name = rev-parse --abbrev-ref HEAD
 	pub = "!git push -u origin $(git branch-name)"
 [core]
+	excludesfile = ~/.gitignore_global

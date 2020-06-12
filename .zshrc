@@ -8,7 +8,7 @@ export ZSH="/Users/popmaada/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="un"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -103,11 +103,11 @@ source $ZSH/oh-my-zsh.sh
 # .env loading in the shell
 # Inspired by http://stackoverflow.com/a/21831665/589391 and
 # https://github.com/gchaincl/dotenv.sh, then re-inspired
-# by the "set -a" trick from timwis
+# by the "set -a" trick from timwis and given me by gsf
 
 dotenv() {
   set -a
-  [ -f .env ] && . .env
+  [ -f .env ] && source .env
   set +a
 }
 
@@ -119,6 +119,8 @@ cd() {
   builtin cd $@
   dotenv
 }
+
+alias reload='source ~/.zshrc'
 
 # git
 alias coma="git checkout master"
@@ -179,6 +181,10 @@ alias kc="kubectl"
 
 # terraform
 alias tf="terraform"
+
+# aws
+source ~/repos/dotfiles/scripts/ct.sh
+source ~/repos/dotfiles/scripts/aws_login.sh
 
 # derp
 alias xyzzy="echo 'Nothing happens.'"
