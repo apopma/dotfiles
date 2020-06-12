@@ -185,6 +185,7 @@ alias tf="terraform"
 # aws
 source ~/repos/dotfiles/scripts/ct.sh
 source ~/repos/dotfiles/scripts/aws_login.sh
+source ~/repos/dotfiles/scripts/ctkey_envs.sh
 
 # derp
 alias xyzzy="echo 'Nothing happens.'"

@@ -2,7 +2,7 @@
 # src: @navapbc-jaekim
 
 function aws_login() {
-  source ./.aws_secrets.sh
+  source ~/repos/dotfiles/scripts/.aws_secrets.sh
 
   echo "DevSecOps: $DEVSECOPS_ACCT_NBR"
   echo "Jenkins Dev: $JENKINS_DEV_ACCT_NBR"
